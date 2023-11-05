@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic shala</title>
+    <link rel="stylesheet" href="./style0.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><img src="./Organic_Shala-removebg-preview.png" alt=""></div>
+            <div class="hbac">
+                <div class="link link1"><a href="./index.html">Home</a></div>
+                <div class="link link2"><a href="./Products.html">Products</a></div>
+                <div class="link link3"><a href="./about.html">About</a></div>
+                <div class="link link4"><a href="./contact.html">Contact</a></div>       
+        </div>
+        <div class="login">
+            <button>Login / SignUp</button>
+        </div>
+        </div>
+        <div class="main">
+            <div class="slide-container">
+	
+	<div class="slides">
+		<img src="./pottery.jpg" class="active">
+		<img src="./hand1.jpg">
+		<img src="./hand2.jpg">
+		<img src="./toys.jpg">
+		<img src="./hand2.jpg">
+	</div>
+
+	<div class="buttons">
+		<span class="next">&#10095;</span>
+		<span class="prev">&#10094;</span>
+	</div>
+
+	<div class="dotsContainer">
+		<div class="dot active" attr='0' onclick="switchImage(this)"></div>
+		<div class="dot" attr='1' onclick="switchImage(this)"></div>
+		<div class="dot" attr='2' onclick="switchImage(this)"></div>
+		<div class="dot" attr='3' onclick="switchImage(this)"></div>
+		<div class="dot" attr='4' onclick="switchImage(this)"></div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	
+	// Access the Images
+	let slideImages = document.querySelectorAll('img');
+	// Access the next and prev buttons
+	let next = document.querySelector('.next');
+	let prev = document.querySelector('.prev');
+	// Access the indicators
+	let dots = document.querySelectorAll('.dot');
+
+	var counter = 0;
+
+	// Code for next button
+	next.addEventListener('click', slideNext);
+	function slideNext(){
+	slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+	if(counter >= slideImages.length-1){
+		counter = 0;
+	}
+	else{
+		counter++;
+	}
+	slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+	indicators();
+	}
+
+	// Code for prev button
+	prev.addEventListener('click', slidePrev);
+	function slidePrev(){
+	slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+	if(counter == 0){
+		counter = slideImages.length-1;
+	}
+	else{
+		counter--;
+	}
+	slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+	indicators();
+	}
+
+	// Auto slideing
+	function autoSliding(){
+		deletInterval = setInterval(timer, 3000);
+		function timer(){
+			slideNext();
+			indicators();
+		}
+	}
+	autoSliding();
+
+	// Stop auto sliding when mouse is over
+	const container = document.querySelector('.slide-container');
+	container.addEventListener('mouseover', function(){
+		clearInterval(deletInterval);
+	});
+
+	// Resume sliding when mouse is out
+	container.addEventListener('mouseout', autoSliding);
+
+	// Add and remove active class from the indicators
+	function indicators(){
+		for(i = 0; i < dots.length; i++){
+			dots[i].className = dots[i].className.replace(' active', '');
+		}
+		dots[counter].className += ' active';
+	}
+
+	// Add click event to the indicator
+	function switchImage(currentImage){
+		currentImage.classList.add('active');
+		var imageId = currentImage.getAttribute('attr');
+		if(imageId > counter){
+		slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+		counter = imageId;
+		slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+		}
+		else if(imageId == counter){
+			return;
+		}
+		else{
+		slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+		counter = imageId;
+		slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';	
+		}
+		indicators();
+	}
+
+</script>
+        </div>
+        <div class="dcpn">
+                   <div class="head"><h1>Why purchase from Organic shala ?</h1></div>
+				   <div class="content">
+					<div class="cont1"><ul>
+						<li><strong>Ethical Sourcing:</strong> Your purchase empowers artisans and their communities.&#x1F64C;</li>
+						<li><strong>Unique Handicrafts:</strong> Discover a diverse range of one-of-a-kind, handmade products.&#x1F389; </li>
+						<li><strong>Positive Impact:</strong> Your purchase empowers artisans and their communities. &#x1F4AA;</li>
+						<li><strong>Fair Trade: </strong>
+							We uphold fair trade practices to ensure ethical production and trade. &#x2696;
+						</li>
+						<li><strong>Environmental Consciousness:</strong>Contribute to a more sustainable and eco-friendly future.&#x1F30D;</li>
+						<li><strong>Quality and Love:</strong> Each item is crafted with care and passion, ensuring top-notch quality.&#x2764;
+						</li>
+					</ul></div>
+					<div class="cont2">
+						<img src="https://static.toiimg.com/thumb/msid-55884998,width-400,resizemode-4/55884998.jpg" alt="handicraftworkerimg">
+						<img src="https://images.yourstory.com/cs/21/98e25df018b511e988ceff9061f4e5e7/Imagephmr1573470708210jpg?w=1152&fm=auto&ar=2:1&mode=crop&crop=faces" alt="">
+						<img src="https://cdn.shopify.com/s/files/1/0045/4449/5729/files/IMG_9692_480x480.jpg?v=1648471556" alt="">
+						<img src="https://cdn.thewire.in/wp-content/uploads/2020/06/05210925/jaipur-rug-making-1024x643.jpg" alt="">
+					</div>
+				   </div>
+            </div>
+        </div>
+		<div class="bests">
+			<div class="hd">
+				<h1>CHECK OUT OUR BEST SELLERS!!</h1>
+			</div>
+			<div class="pds">
+					<div class="pop ptp2"> <img src="https://m.media-amazon.com/images/I/512SL47Jp+L._AC_UL320_.jpg" alt="potteryimg">
+						<p class="para">Craftsman Clay Handi/Pot for Cooking and Serving Combo 1, 1 & 2Liter</p>
+						<h3> <sup>&#8377;</sup>1,099</h3><p>M.R.P.:<del>₹2,399</del></p>
+						<button>Add to Cart</button>
+				</div>
+				<div class="pop ptp23"> <img src="https://m.media-amazon.com/images/I/71no4Hh903L._AC_UL320_.jpg" alt="">
+					<p class="para">Habere India-All the Cultures Fabricating India Straw Bag | Small Tote Bag | Basket Bag | Bamboo Tote | Beach Bags for Women | Boho Bag | Kauna Bag | Handbag | Half Moon Bag</p>
+					<h3><sup>&#8377;</sup>807</h3>
+					<p>M.R.P.:<del>₹1,499</del></p>
+					<button>Add to Cart</button>
+			</div>
+			<div class="pop ptp42"> <img src="https://m.media-amazon.com/images/I/41y6QD0FWVL._AC_UL320_.jpg" alt="">
+				<p class="para">JALTHER Handicrafts Women's Ikat Hand Block Print Jaipuri Cotton Mulmul Saree with Blouse Piece</p>
+				<h3><sup>&#8377;</sup>709</h3>
+				<p>M.R.P.:<del>6,999</del></p>
+				<button>Add to Cart</button>
+			</div>
+			<div class="pop ptp52"> <img src="https://m.media-amazon.com/images/I/91f+D8Gcp0S._AC_UL320_.jpg" alt="">
+				<p class="para">Online Quality Store Combo of 12 Skin Care Products ,(Multani Mitti, Neem, Orange Peel, Rose, Chandan, Charcoal, Mitti Stone, Kaolin Clay, Mint, Haldi,Alovera, Tulsi Powders) |skin care products combo,(Pack of 12 ,50g each ,Total 600 Pack)</p>
+				<h3><sup>&#8377;</sup>318</h3>
+				<p>M.R.P.:<del></del>1,200</p>
+				<button>Add to Cart</button>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="foot">
+				<div class="lp"><img src="./Organic_Shala-removebg-preview.png" alt=""></div>
+				<div class="navlink">
+					<div class="nav"><h3>Navigation Links</h3></div>
+				   <div class="nav"><a href="./index.html">Home</a></div>
+				   <div class="nav"><a href="./Products.html">Products</a></div>
+				   <div class="nav"><a href="./about.html">About</a></div>
+				   <div class="nav"><a href="">Contact</a></div>
+			</div>
+				 <div class="othlink">
+					<div class="nav"> <h3>Suggestions</h3></div>
+				    <p> <em>
+						We welcome your suggestions! If you have any ideas or feedback about our site and products, please share them with us by emailing us. Your input helps us improve and better serve you.</em></p>
+						<a href="mailto:OrganicShalaSuggestions@gmail.com">OrganicShalaSuggestions@gmail.com</a>
+				 </div>
+			</div>
+			<div class="cr">
+				<p> &copy; Copyright All rights Reserved</p>
+			</div>
+		 </div>
+	
+	</div>
+</body>
+</html>

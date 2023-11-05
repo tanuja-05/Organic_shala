@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans&display=swap');
+*{
+    font-family: 'AR One Sans', sans-serif;
+}
+.abpg{
+    background: linear-gradient(#56bc0d,#a4ff7a);
+}
+.header{
+display: grid;
+grid-area: header;
+grid-template-columns:repeat(3,650px) ;
+align-items: center;    
+justify-content: space-evenly;
+font-size: 25px;
+background-color: #ffffff;
+color: #000000;
+padding: 5px;
+box-shadow: 0px 2px 5px #71b617;
+top: 0;
+left: 0;
+width: 100%;
+}
+.logo>img{
+height: 100px;
+width: 200px;
+}
+.hbac{
+    display: grid;
+    grid-template-columns: repeat(4,120px);
+    grid-column-gap: 10px;
+    justify-content: center;
+}
+.link>a{
+    text-decoration: none;
+    color: #13c709;
+}
+.login{
+display: grid; 
+justify-self:flex-end;
+    }
+button{
+text-decoration: none;
+font-size: 20px;
+padding: 15px 80px 15px 80px;
+background-color: #4cd622;
+color: #ffffff;
+border: none;
+border-radius: 5px;
+}
+
+.pics{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 70px 0px 10px 0px;
+}
+.pics>img{
+    border-radius: 160px;
+    height: 350px;
+    width: 350px;
+    margin: 30px;
+}
+.apara{
+    text-align: center;
+    padding: 20px 70px 20px 70px;
+}
+.apara>p{
+    font-size: 35px;
+    color: #020202;
+    
+}
+.footer{
+    margin-top: 50px;
+    background-color: rgb(90, 52, 4);
+    grid-area: footer;
+}
+.foot{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    color: #82d82b;
+    margin: 50px;
+    padding: 50px;
+    height: 40vh;
+    bottom: 0px;
+}
+.lp{
+ align-self: center;
+}
+.lp>img{
+    height: 200px;
+    width: 350px;
+}
+.nav>h3{
+   font-size: 40px;
+}
+.navlink{
+    display: grid;
+}
+.nav>a{
+    text-decoration: none;
+    font-size: 25px;
+    color: #82d82b;
+}
+.othlink{
+    font-size: 25px;
+    color: #82d82b;
+}
+.othlink>a{
+    text-decoration: none;
+    font-size: 30px;
+    color: #82d82b;
+}
+.cr{
+    font-size: 30px;
+    color: #82d82b;
+    text-align: center;
+    padding: 20px;
+}
